@@ -5,20 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Playing with Accessibility</title>
+    <link href="styles/styles.css" rel="stylesheet">
 </head>
 <body>
-    <nav>
+    <!-- the job of ARIA role tags is to classify parts of your page by their
+     functionality -->
+    <nav role="navigation">
         <ul>
             <li><a href="">Home</a></li>
             <li><a href="">About</a></li>
-            <li><a href="">Stuff</a></li>
-            <li><a href="">Contact</a></li>
+            <!-- the aria-label tag helps devices and tech understand what 
+             the purpose of a link is (and where it will take you)-->            
+            <li><a href="" aria-label="opens up the blog page">Stuff</a></li>
+            <li><a href="" aria-label="opens up the contact page">Contact</a></li>
         </ul>
     </nav>
     
-    <main>        
-        <article>
-            <img src="images/tyche.jpg">
+    <main role="main">        
+        <article role="article">
+            <!-- the aria-details tag matches the ID of another element and shows
+             that the content or text is linked to the image (or describing the image)-->
+            <img src="images/tyche.jpg" aria-details="tycheInfo" alt="a grey kitten on a red blanket">
             <section id="tycheInfo">
                 <p>Tyche</p>
                 <p>October 15, 2020</p>
@@ -26,8 +33,8 @@
             </section>
         </article>
     </main>
-    <aside>
-        <a href="">Subscribe</a>
+    <aside role="content-info">
+        <a href="" aria-label="open a pop-up to enter newsletter subscription information">Subscribe</a>
     </aside>
 </body>
 </html>
