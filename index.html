@@ -8,6 +8,17 @@
     <link href="styles/styles.css" rel="stylesheet">
 </head>
 <body>
+    <!-- skip links are a hidden navigation to help people who ar using a keyboard to access your site
+     they are not visbile unless a user tabs onto them (focuses on them) -->
+    <div class="skip-links">
+        <ul>
+            <li><a href="#navigation">Skip to nav</a></li>
+            <!-- the #, or named anchor, is a link that takes you to an ID on the page -->
+            <li><a href="#tycheInfo">Skip to main content</a></li>
+            <li><a href="">Skip to footer</a></li>
+        </ul>
+    </div>
+
     <!-- the job of ARIA role tags is to classify parts of your page by their
      functionality -->
     <nav role="navigation">
@@ -21,7 +32,37 @@
         </ul>
     </nav>
     
-    <main role="main">        
+    <main role="main">
+        <!-- two tags necessary in any form
+         action says where the info is going to be processed
+         method says how it's going to get there -->
+        <form action="processForm.php" method="post">
+            <!-- input tags allows the user to type content or other info
+             input tags requires three attribute:
+             type which says what kind of input this is (ie. text, checkbox)
+             name is the label used when the information is processed on the server
+             id is reuuired to match with the label tag
+              -->
+            <!-- label tags should match up tp one of your form fields
+             the for attribute needs to match the id of the form field -->
+            <div>
+                <label for="fullname">Enter your full name:</label><input type="text" name="fullname" id="fullname">
+            </div>
+            <!-- providing specific form types, like email, will allow moblie devices to
+             provide the user with an appropriate keyboard set when tying in the field -->
+            <div>
+                <label for="email">Enter your email:</label><input type="email" name="email" id="email">
+            </div>
+            <!-- using the checked attribute will start a radio button or checkbox as checked when the page loads -->
+            <div>
+                <label for="spam">Span me forever:</label><input type="checkbox" name="spam" id="spam" checked="checked">
+            </div>
+            <!-- the submit input makes a button to submit the form
+             value sets the text inside the button -->
+            <div>
+                <input type="submit" name="submit" id="submit" value="Sign Up">
+            </div>
+        </form>        
         <article role="article">
             <!-- the aria-details tag matches the ID of another element and shows
              that the content or text is linked to the image (or describing the image)-->
