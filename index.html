@@ -63,13 +63,13 @@
                 <input type="submit" name="submit" id="submit" value="Sign Up">
             </div>
         </form>        
-        <article role="article">
+        <article itemscope itemtype="https://schema.org/Person" role="article">
             <!-- the aria-details tag matches the ID of another element and shows
              that the content or text is linked to the image (or describing the image)-->
             <img src="images/tyche.jpg" aria-details="tycheInfo" alt="a grey kitten on a red blanket">
             <section id="tycheInfo">
-                <p>Tyche</p>
-                <p>October 15, 2020</p>
+                <p itemprop="givenName">Tyche</p>
+                <p itemprop="birthDate">October 15, 2020</p>
                 <p>Tyche crawled out of our hedge in early November 2020.</p>
             </section>
         </article>
